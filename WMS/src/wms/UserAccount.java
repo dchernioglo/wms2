@@ -17,12 +17,13 @@ public class UserAccount {
     private String[] address = new String[4];
     private String DOB;
     private String userName;
-    private String password;
+    private char[] password;
+    private double balance;
     
     //Constructors
     public UserAccount(){};
     
-    public UserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, String inPassword)
+    public UserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, char[] inPassword)
     {
         acctID = numAcct++; //Creating unique account ID
         name = inName;
@@ -36,9 +37,20 @@ public class UserAccount {
         DOB = inDOB;
         userName = inUserName;
         password = inPassword;
+        balance = 0;
        
     }
     
+    //Methods
+    public String getUserName(){return userName;}
+    public char[] getPassword(){return password;}
+    public String getName() { return name; }
+    public double getBalance() { return balance;}
+    
+    public void addFunds(double inMoney)
+    {
+        balance += inMoney;
+    }
     
     
 }

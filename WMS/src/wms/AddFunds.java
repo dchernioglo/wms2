@@ -10,6 +10,9 @@ package wms;
  * @author Garry Guerrier
  */
 public class AddFunds extends javax.swing.JFrame {
+    
+    //Attributes
+    private UserAccount myUser;
 
     /**
      * Creates new form MockGUI
@@ -17,6 +20,17 @@ public class AddFunds extends javax.swing.JFrame {
     public AddFunds() {
         initComponents();
     }
+    
+    public AddFunds(UserAccount inUserAccount) {
+        this();
+        myUser = inUserAccount;
+    }
+    
+    
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +65,11 @@ public class AddFunds extends javax.swing.JFrame {
         });
 
         jButton4.setText("Confirm");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,6 +119,14 @@ public class AddFunds extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        myUser.addFunds(Double.parseDouble(jTextField1.getText()));
+        LandingPage lp = new LandingPage(myUser);
+        lp.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

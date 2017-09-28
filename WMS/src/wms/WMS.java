@@ -5,8 +5,10 @@
  */
 package wms;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;
+import javax.swing.JFrame;
 
 public class WMS {
     
@@ -19,15 +21,24 @@ public class WMS {
     private static LinkedList<UserAccount> users = new LinkedList<UserAccount>();
     
     //Constructors
-    public WMS(){} //Argumentless Constructor
+    //public WMS(){} //Argumentless Constructor
     
     //Methods
     //public boolean submitNewCustomerRegistration(int inAcctID, String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, String inPassword){};
     
-    public static boolean addUserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, String inPassword)
+    public static boolean addUserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, char[] inPassword)
     {
         users.add(new UserAccount(inName, inPhone, inEmail, inSSN, inAddress, inDOB, inUserName, inPassword));
         return true;
+    }
+
+    public static UserAccount login(String inUserName, char[] inPassword)
+    {   
+        for (int i = 0; i < users.size(); i ++)
+        {
+            if ((inUserName.equals(users.get(i).getUserName())) && (Arrays.equals(inPassword,users.get(i).getPassword()))){return users.get(i);}
+        }
+        return null;
     }
     
     

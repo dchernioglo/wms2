@@ -224,12 +224,14 @@ public class CreateNewAccount extends javax.swing.JFrame {
 	inAddress[1] = jTextField8.getText();
 	inAddress[2] = jTextField9.getText();
 	inAddress[3] = jTextField10.getText();
-        boolean success = WMS.addUserAccount(jTextField6.getText(), jTextField3.getText(), jTextField2.getText(), jTextField1.getText(), inAddress, jTextField5.getText(), jTextField4.getText(), jPasswordField1.getText());
+        boolean success = WMS.addUserAccount(jTextField6.getText(),jTextField3.getText(), jTextField2.getText(), jTextField1.getText(), inAddress, jTextField5.getText(), jTextField4.getText(), jPasswordField1.getPassword());
         
-        if (success = true)
+        if (success == true)
         {
-            JOptionPane.showMessageDialog(null, "User Account has been created!FU");
+            JOptionPane.showMessageDialog(null, "Create User: Success");
+            this.dispose();
         }
+        else{JOptionPane.showMessageDialog(null, "Create User: Fail");}
         
         
     }//GEN-LAST:event_jButton2ActionPerformed

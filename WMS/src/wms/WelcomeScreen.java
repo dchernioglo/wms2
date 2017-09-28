@@ -5,6 +5,8 @@
  */
 package wms;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Garry Guerrier
@@ -63,10 +65,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("jTextField1");
-
-        jPasswordField1.setText("jPasswordField1");
-
         jLabel2.setText("Username");
 
         jLabel3.setText("Password");
@@ -83,7 +81,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 .addComponent(jButton5)
                 .addGap(39, 39, 39))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(191, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(172, 172, 172))
             .addGroup(layout.createSequentialGroup()
@@ -94,13 +92,13 @@ public class WelcomeScreen extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                             .addComponent(jPasswordField1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(219, 219, 219)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +137,19 @@ public class WelcomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        UserAccount user; 
+        user = WMS.login(jTextField1.getText(),jPasswordField1.getPassword());
+        
+        if (user == null)
+        {
+            JOptionPane.showMessageDialog(null,"Login: Failed");    
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Login: Success");
+            LandingPage lp = new LandingPage(user);
+            lp.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
