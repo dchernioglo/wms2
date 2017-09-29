@@ -82,6 +82,11 @@ public class LandingPage extends javax.swing.JFrame {
         jButton5.setText("Buy");
 
         jButton8.setText("Create New Portfolio");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         label5.setFont(new java.awt.Font("Dialog", 2, 18)); // NOI18N
         label5.setText("$1,120,522.03");
@@ -182,6 +187,11 @@ public class LandingPage extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        AddNamePortfolio anp = new AddNamePortfolio();
+        anp.setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
