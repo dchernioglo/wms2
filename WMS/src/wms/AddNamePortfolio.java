@@ -10,10 +10,15 @@ package wms;
  * @author Garry Guerrier
  */
 public class AddNamePortfolio extends javax.swing.JFrame {
-
+private UserAccount user;
     /**
      * Creates new form MockGUI
      */
+ public AddNamePortfolio(UserAccount myUser)
+    {
+        this();
+        user = myUser;
+    }
     public AddNamePortfolio() {
         initComponents();
     }
@@ -27,6 +32,7 @@ public class AddNamePortfolio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jButton4 = new javax.swing.JButton();
@@ -43,6 +49,11 @@ public class AddNamePortfolio extends javax.swing.JFrame {
         jLabel1.setText("New Portfolio");
 
         jButton4.setText("Next");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jTextField1.setText("Enter New Portfolio Name");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -52,14 +63,26 @@ public class AddNamePortfolio extends javax.swing.JFrame {
         });
 
         jButton5.setText("Cancel");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOW" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LOW", "MED", "HIGH" }));
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jRadioButton1.setText("Auto Regulated Risk");
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jRadioButton2.setText("Manual Risk ");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,7 +102,9 @@ public class AddNamePortfolio extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jRadioButton1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(38, 38, 38))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
@@ -89,11 +114,6 @@ public class AddNamePortfolio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(109, 109, 109))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(257, 257, 257)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(45, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,17 +129,14 @@ public class AddNamePortfolio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jRadioButton2)
                 .addGap(22, 22, 22)
-                .addComponent(jRadioButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(201, 201, 201)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(144, Short.MAX_VALUE)))
         );
 
         pack();
@@ -128,6 +145,22 @@ public class AddNamePortfolio extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       LandingPage lp = new LandingPage(user);
+       lp.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        AddInstrumentsPortfolio aip = new AddInstrumentsPortfolio();
+        aip.setVisible(true);  
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +201,7 @@ public class AddNamePortfolio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;

@@ -147,7 +147,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Login: Failed");    
         }
         else {
-            JOptionPane.showMessageDialog(null,"Login: Success");
+            //JOptionPane.showMessageDialog(null,"Login: Success");
             LandingPage lp = new LandingPage(user);
             lp.setVisible(true);
             this.dispose();
