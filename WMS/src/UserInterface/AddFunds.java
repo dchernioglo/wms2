@@ -105,6 +105,7 @@ public class AddFunds extends javax.swing.JFrame {
         myUser.addFunds(Double.parseDouble(jTextField1.getText()));
         LandingPage lp = new LandingPage(myUser);
         lp.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
 
