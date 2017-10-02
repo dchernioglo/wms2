@@ -12,6 +12,7 @@ import WMSLogic.InstrumentBucket;
 import WMSLogic.InstrumentBucket;
 import WMSLogic.UserAccount;
 import WMSLogic.UserAccount;
+import java.io.PrintWriter;
 
 public class WMS {
     
@@ -22,6 +23,7 @@ public class WMS {
     private FinancialInstrument what;
     private int quantity;
     private static LinkedList<UserAccount> users = new LinkedList<UserAccount>();
+    private static LinkedList<InstrumentBucket> buckets = new LinkedList<InstrumentBucket>();
     private UserAccount testUser;
     
     //Constructors
@@ -29,6 +31,12 @@ public class WMS {
     
     //Methods
     //public boolean submitNewCustomerRegistration(int inAcctID, String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, String inPassword){};
+    
+    public static boolean addCreatePortfolio(String inRisk, double inROI)
+    {
+        //buckets.add(new Portfolio(inName, inPhone, inEmail, inSSN, inAddress, inDOB, inUserName, inPassword));
+        return true;
+    }
     
     public static boolean addUserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, char[] inPassword)
     {
@@ -50,8 +58,7 @@ public class WMS {
         WelcomeScreen ws = new WelcomeScreen();
         ws.setVisible(true);
         
-        
-        //creating test user
+        //<editor-fold defaultstate="collapsed" desc=" Creating Sample User ">
         String name = "Joe Smith";
         String phone = "3525551111";
         String email = "joseph@ufl.edu";
@@ -70,6 +77,18 @@ public class WMS {
         
         addUserAccount(name, phone, email, SSN, address, DOB, userName, password);
         users.get(0).addFunds(balance);
+        
+        //</editor-fold>
+        
+        //setting up to read TextFile
+        PrintWriter output = null;
+        try {
+            
+        }
+        catch (Exception e) {
+            System.out.print(e.toString());
+        }
+        
     }
     
 }
