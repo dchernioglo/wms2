@@ -8,12 +8,17 @@ public class InstrumentBucket {
     private double currentWorth;
     private double userFunds;
     private String name;
+    private UserAccount user;
     
     //constructors
     public InstrumentBucket() { };
-    public InstrumentBucket(String inName){
+    public InstrumentBucket(String inName, UserAccount inUserAccount){
+        user = inUserAccount;
         bucketID = numBucket++;
         name = inName;
     }
+    
+    //method
+    public static int getNumBucket() { return numBucket; }
     
 }

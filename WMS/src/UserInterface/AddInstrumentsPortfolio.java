@@ -8,6 +8,15 @@ private UserAccount myUser;
     public AddInstrumentsPortfolio() {
         initComponents();
     }
+    
+    public AddInstrumentsPortfolio(UserAccount inUserAccount) {
+        this();
+        myUser = inUserAccount;
+    }
+    
+    
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -18,7 +27,7 @@ private UserAccount myUser;
         jButton1 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jbtnFinish = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -35,10 +44,10 @@ private UserAccount myUser;
             }
         });
 
-        jButton6.setText("Finish");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jbtnFinish.setText("Finish");
+        jbtnFinish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jbtnFinishActionPerformed(evt);
             }
         });
 
@@ -72,7 +81,7 @@ private UserAccount myUser;
                         .addGap(107, 107, 107)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(107, 107, 107)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbtnFinish, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -90,7 +99,7 @@ private UserAccount myUser;
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jbtnFinish, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -104,11 +113,12 @@ private UserAccount myUser;
         this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jbtnFinishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnFinishActionPerformed
         LandingPage lp = new LandingPage(myUser);
-        lp.setVisible(true);   
+        lp.setVisible(true);  
+        LandingPage.setPort1(true);
         this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jbtnFinishActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         TransferForm tf = new TransferForm();
@@ -155,10 +165,10 @@ private UserAccount myUser;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JButton jbtnFinish;
     private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 }

@@ -41,6 +41,7 @@ public class UserAccount {
     public char[] getPassword(){return password;}
     public String getName() { return name; }
     public double getBalance() { return balance;}
+    public int getUserAcctID() { return acctID;}
     
     public void addFunds(double inMoney)
     {

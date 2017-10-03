@@ -1,11 +1,13 @@
 package UserInterface;
 
-import UserInterface.AddInstrumentsPortfolio;
+import Main.WMS;
+import WMSLogic.Portfolio;
 import WMSLogic.UserAccount;
 
 public class AddNamePortfolio extends javax.swing.JFrame {
 
     private UserAccount user;
+    private Portfolio myPort;
 
     public AddNamePortfolio(UserAccount myUser) {
         this();
@@ -25,9 +27,9 @@ public class AddNamePortfolio extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnCreate = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        jtfName = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcbRisk = new javax.swing.JComboBox<>();
         lblRisk = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,12 +44,12 @@ public class AddNamePortfolio extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField1.setText("Enter New Portfolio Name");
-        jTextField1.setDisabledTextColor(java.awt.SystemColor.activeCaptionText);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtfName.setForeground(new java.awt.Color(204, 204, 204));
+        jtfName.setText("Enter New Portfolio Name");
+        jtfName.setDisabledTextColor(java.awt.SystemColor.activeCaptionText);
+        jtfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtfNameActionPerformed(evt);
             }
         });
 
@@ -58,10 +60,10 @@ public class AddNamePortfolio extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Low", "Med", "High", "OFF" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jcbRisk.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Low", "Med", "High", "OFF" }));
+        jcbRisk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                jcbRiskActionPerformed(evt);
             }
         });
 
@@ -75,7 +77,7 @@ public class AddNamePortfolio extends javax.swing.JFrame {
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(128, 128, 128))
             .addGroup(layout.createSequentialGroup()
                 .addGap(151, 151, 151)
@@ -87,7 +89,7 @@ public class AddNamePortfolio extends javax.swing.JFrame {
                         .addGap(98, 98, 98)
                         .addComponent(lblRisk, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(35, 35, 35)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jcbRisk, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -103,12 +105,12 @@ public class AddNamePortfolio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtfName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcbRisk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRisk))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -120,9 +122,9 @@ public class AddNamePortfolio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtfNameActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         LandingPage lp = new LandingPage(user);
@@ -131,15 +133,15 @@ public class AddNamePortfolio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        
-        AddInstrumentsPortfolio aip = new AddInstrumentsPortfolio();
+        myPort = WMS.addPortfolio(jtfName.getText(), String.valueOf(jcbRisk.getSelectedItem()), user);
+        AddInstrumentsPortfolio aip = new AddInstrumentsPortfolio(user);
         aip.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCreateActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jcbRiskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbRiskActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jcbRiskActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -180,11 +182,11 @@ public class AddNamePortfolio extends javax.swing.JFrame {
     private javax.swing.JButton btnCreate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JComboBox<String> jcbRisk;
+    private javax.swing.JTextField jtfName;
     private javax.swing.JLabel lblRisk;
     // End of variables declaration//GEN-END:variables
 }

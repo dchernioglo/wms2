@@ -1,41 +1,38 @@
 package Main;
 
-import UserInterface.WelcomeScreen;
+//<editor-fold defaultstate="collapsed" desc=" Imports ">
 import UserInterface.WelcomeScreen;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;
 import javax.swing.JFrame;
 import WMSLogic.FinancialInstrument;
-import WMSLogic.FinancialInstrument;
 import WMSLogic.InstrumentBucket;
-import WMSLogic.InstrumentBucket;
-import WMSLogic.UserAccount;
+import WMSLogic.Portfolio;
 import WMSLogic.UserAccount;
 import java.io.PrintWriter;
+//</editor-fold>
 
 public class WMS {
     
-     //atributes
-    private Date systemDate;
-    private InstrumentBucket from = null;
-    private InstrumentBucket to;
-    private FinancialInstrument what;
-    private int quantity;
+    //Atributes
+    //private Date systemDate;
+    //private InstrumentBucket from = null;
+    //private InstrumentBucket to;
+    //private FinancialInstrument what;
+    //private int quantity;
     private static LinkedList<UserAccount> users = new LinkedList<UserAccount>();
     private static LinkedList<InstrumentBucket> buckets = new LinkedList<InstrumentBucket>();
     private UserAccount testUser;
     
     //Constructors
-    //public WMS(){} //Argumentless Constructor
     
     //Methods
-    //public boolean submitNewCustomerRegistration(int inAcctID, String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, String inPassword){};
     
-    public static boolean addCreatePortfolio(String inRisk, double inROI)
+    public static Portfolio addPortfolio(String inName, String inRisk, UserAccount inUser)
     {
-        //buckets.add(new Portfolio(inName, inPhone, inEmail, inSSN, inAddress, inDOB, inUserName, inPassword));
-        return true;
+        buckets.add(new Portfolio(inName, inRisk, inUser));
+        return (Portfolio)buckets.get(InstrumentBucket.getNumBucket() - 1);
     }
     
     public static boolean addUserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, char[] inPassword)
@@ -71,8 +68,8 @@ public class WMS {
 	address[3] = "32601"; //zip code
         
         String DOB = "01/31/1960";
-        String userName = "jSmith";
-        char[] password = "123".toCharArray();
+        String userName = "1";
+        char[] password = "1".toCharArray();
         double balance = 100000;
         
         addUserAccount(name, phone, email, SSN, address, DOB, userName, password);

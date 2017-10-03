@@ -1,14 +1,15 @@
 package WMSLogic;
 public class Portfolio extends InstrumentBucket {
-    //attributes  
+    //attributes
+    
     private String risk;
     private double ROI;    
     
     //constructor
     public Portfolio () { };
-    public Portfolio (String inRisk, double inROI){
+    public Portfolio (String inName, String inRisk, UserAccount inUser){
+        super(inName, inUser);
         risk = inRisk;
-        ROI = inROI;
     }
     
     

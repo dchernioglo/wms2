@@ -9,6 +9,8 @@ public class LandingPage extends javax.swing.JFrame {
     
     //Attribute
     private UserAccount user;
+    private static boolean port1 = false;
+    private static boolean port2 = false;
 
     public LandingPage() {
         initComponents();
@@ -19,6 +21,9 @@ public class LandingPage extends javax.swing.JFrame {
         this();
         user = myUser;
     }
+    
+    public static void setPort1 (boolean myPort) { port1 = myPort; }
+    public static void setPort2 (boolean myPort) { port2 = myPort; }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -35,8 +40,8 @@ public class LandingPage extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         label5 = new java.awt.Label();
         label6 = new java.awt.Label();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jbtnPort1 = new javax.swing.JButton();
+        jbtnPort2 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton6 = new javax.swing.JButton();
 
@@ -84,16 +89,16 @@ public class LandingPage extends javax.swing.JFrame {
         label6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         label6.setText("Balance");
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jButton2.setText("DemoA");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbtnPort1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jbtnPort1.setText("DemoA");
+        jbtnPort1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbtnPort1ActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jButton3.setText("DemoB");
+        jbtnPort2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jbtnPort2.setText("DemoB");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Menu", "Account Management", "Systems Settings" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
@@ -140,8 +145,8 @@ public class LandingPage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jbtnPort1)
+                    .addComponent(jbtnPort2))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -169,9 +174,9 @@ public class LandingPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addGap(94, 94, 94)
-                .addComponent(jButton2)
+                .addComponent(jbtnPort1)
                 .addGap(106, 106, 106)
-                .addComponent(jButton3)
+                .addComponent(jbtnPort2)
                 .addGap(86, 86, 86)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -187,7 +192,9 @@ public class LandingPage extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         label1.setText(user.getName());
-        label5.setText("$"+Double.toString(user.getBalance()));       
+        label5.setText("$"+Double.toString(user.getBalance())); 
+        jbtnPort1.setVisible(port1);
+        jbtnPort2.setVisible(port2);
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -202,9 +209,9 @@ public class LandingPage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbtnPort1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPort1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbtnPort1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
@@ -247,15 +254,13 @@ public class LandingPage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LandingPage().setVisible(true);
-                
+               
             }
         });      
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -263,6 +268,8 @@ public class LandingPage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JButton jbtnPort1;
+    private javax.swing.JButton jbtnPort2;
     private java.awt.Label label1;
     private java.awt.Label label3;
     private java.awt.Label label4;
