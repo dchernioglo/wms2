@@ -1,17 +1,18 @@
 package UserInterface;
 
-import UserInterface.BuyLandingPage;
-import UserInterface.AddNamePortfolio;
-import UserInterface.AddFunds;
+//import UserInterface.BuyLandingPage;
+//import UserInterface.AddNamePortfolio;
+//import UserInterface.AddFunds;
 import WMSLogic.UserAccount;
 
 public class LandingPage extends javax.swing.JFrame {
     
-    //Attribute
+    //Attributes
     private UserAccount user;
     private static boolean port1 = false;
     private static boolean port2 = false;
 
+    //Constructors
     public LandingPage() {
         initComponents();
     }
@@ -22,6 +23,7 @@ public class LandingPage extends javax.swing.JFrame {
         user = myUser;
     }
     
+    //Methods
     public static void setPort1 (boolean myPort) { port1 = myPort; }
     public static void setPort2 (boolean myPort) { port2 = myPort; }
 
