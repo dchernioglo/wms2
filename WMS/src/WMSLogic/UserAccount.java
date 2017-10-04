@@ -1,6 +1,8 @@
 
 package WMSLogic;
 
+import java.util.LinkedList;
+
 public class UserAccount {
     
     //Attributes
@@ -15,7 +17,9 @@ public class UserAccount {
     private String userName;
     private char[] password;
     private double balance;
+    private static LinkedList<InstrumentBucket> buckets = new LinkedList<InstrumentBucket>();
     
+    //Constructors
     public UserAccount(){};
     
     public UserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, char[] inPassword)
@@ -36,17 +40,24 @@ public class UserAccount {
        
     }
     
-    
+    //Methods
     public String getUserName(){return userName;}
     public char[] getPassword(){return password;}
     public String getName() { return name; }
     public double getBalance() { return balance;}
     public int getUserAcctID() { return acctID;}
+    public String getPortName(int index) { return buckets.get(index).getName(); }
+    public int getNumPort() { return buckets.size(); }
+    
+    
+    public void addPortfolioToList(String inName, String inRisk){
+        buckets.add(new Portfolio(inName, inRisk));
+        //return (Portfolio)buckets.get(InstrumentBucket.getNumBucket() - 1);
+    }
     
     public void addFunds(double inMoney)
     {
         balance += inMoney;
-    }
-    
+    }  
     
 }

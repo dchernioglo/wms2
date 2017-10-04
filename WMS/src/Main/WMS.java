@@ -22,18 +22,12 @@ public class WMS {
     //private FinancialInstrument what;
     //private int quantity;
     private static LinkedList<UserAccount> users = new LinkedList<UserAccount>();
-    private static LinkedList<InstrumentBucket> buckets = new LinkedList<InstrumentBucket>();
+    //private static LinkedList<InstrumentBucket> buckets = new LinkedList<InstrumentBucket>();
     private UserAccount testUser;
     
     //Constructors
     
     //Methods
-    
-    public static Portfolio addPortfolio(String inName, String inRisk, UserAccount inUser)
-    {
-        buckets.add(new Portfolio(inName, inRisk, inUser));
-        return (Portfolio)buckets.get(InstrumentBucket.getNumBucket() - 1);
-    }
     
     public static boolean addUserAccount(String inName, String inPhone, String inEmail, String inSSN, String[] inAddress, String inDOB, String inUserName, char[] inPassword)
     {

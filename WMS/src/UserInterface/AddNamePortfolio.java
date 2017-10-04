@@ -7,7 +7,6 @@ import WMSLogic.UserAccount;
 public class AddNamePortfolio extends javax.swing.JFrame {
 
     private UserAccount user;
-    private Portfolio myPort;
 
     public AddNamePortfolio(UserAccount myUser) {
         this();
@@ -133,7 +132,7 @@ public class AddNamePortfolio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        myPort = WMS.addPortfolio(jtfName.getText(), String.valueOf(jcbRisk.getSelectedItem()), user);
+        user.addPortfolioToList(jtfName.getText(), String.valueOf(jcbRisk.getSelectedItem()));
         AddInstrumentsPortfolio aip = new AddInstrumentsPortfolio(user);
         aip.setVisible(true);
         this.dispose();

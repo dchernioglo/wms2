@@ -13,10 +13,6 @@ private UserAccount myUser;
         this();
         myUser = inUserAccount;
     }
-    
-    
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -117,6 +113,10 @@ private UserAccount myUser;
         LandingPage lp = new LandingPage(myUser);
         lp.setVisible(true);  
         LandingPage.setPort1(true);
+        if(myUser.getNumPort() == 2)
+        {
+            LandingPage.setPort2(true);
+        }
         this.dispose();
     }//GEN-LAST:event_jbtnFinishActionPerformed
 

@@ -7,8 +7,8 @@ public class Portfolio extends InstrumentBucket {
     
     //constructor
     public Portfolio () { };
-    public Portfolio (String inName, String inRisk, UserAccount inUser){
-        super(inName, inUser);
+    public Portfolio (String inName, String inRisk){
+        super(inName);
         risk = inRisk;
     }
     

@@ -195,6 +195,15 @@ public class LandingPage extends javax.swing.JFrame {
         label5.setText("$"+Double.toString(user.getBalance())); 
         jbtnPort1.setVisible(port1);
         jbtnPort2.setVisible(port2);
+        
+        if(port1)
+        {
+            jbtnPort1.setText(user.getPortName(0));
+        }
+        if(port2)
+        {
+            jbtnPort2.setText(user.getPortName(1));
+        }
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
