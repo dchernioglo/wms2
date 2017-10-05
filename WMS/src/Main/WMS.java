@@ -24,6 +24,7 @@ public class WMS {
     private static LinkedList<UserAccount> users = new LinkedList<UserAccount>();
     //private static LinkedList<InstrumentBucket> buckets = new LinkedList<InstrumentBucket>();
     private UserAccount testUser;
+    //I love this tool!
     
     //Constructors
     
