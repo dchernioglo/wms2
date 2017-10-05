@@ -26,6 +26,11 @@ public class BuyLandingPage extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         label1.setFont(new java.awt.Font("Dialog", 1, 28)); // NOI18N
         label1.setText("John Snow");
@@ -173,6 +178,10 @@ public class BuyLandingPage extends javax.swing.JFrame {
         bl.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        
+    }//GEN-LAST:event_formWindowActivated
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
